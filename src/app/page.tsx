@@ -189,7 +189,6 @@ export default function TeachersInfoCards() {
                                             src={teacher.imageSrc}
                                             alt={`${teacher.name}'s portrait`}
                                             fill
-                                            className="object-cover transition-transform duration-300 hover:scale-110"
                                         />
                                     </div>
                                     <div className="flex gap-2 items-start mt-auto text-gray-300">
