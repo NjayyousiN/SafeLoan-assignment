@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: 'export',
-  // images: {
-  //   loader: 'akamai',
-  // },
-  // assetPrefix: './',
-};
+  output: 'export',  
+  assetPrefix: '/SafeLoan-assignment/',  
+  basePath: '/SafeLoan-assignment',    
+  images: {
+      unoptimized: true,  
+  },};
 
 export default nextConfig;
