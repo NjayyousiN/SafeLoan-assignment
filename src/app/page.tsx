@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import WordFadeIn from "@/components/ui/word-fade-in";
 import {
     Book,
     UserRound,
@@ -167,9 +166,7 @@ export default function TeachersInfoCards() {
             </header>
             <main className="flex-grow">
                 <div className="container mx-auto py-12 px-4">
-                    <h2 className="text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-white">
-                        Book Classes with Our Expert Teachers
-                    </h2>
+                    <WordFadeIn words="Book Classes with Our Expert Teachers" />
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {teachers.map((teacher) => (
                             <Card
