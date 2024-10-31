@@ -39,7 +39,7 @@ export default function Header() {
         <header
             className={
                 "py-4 shadow-lg bg-gradient-to-r from-blue-600 to-blue-800 text-white dark:from-blue-900 dark:to-blue-950 dark:text-white"
-            } 
+            }
         >
             <div className="container mx-auto flex flex-wrap justify-between items-center px-4">
                 <Image
@@ -50,7 +50,7 @@ export default function Header() {
                     className="text-blue-900"
                     style={{ filter: "brightness(0.8)" }}
                 />
-                <nav className="hidden lg:flex space-x-2">
+                <nav className="hidden lg:flex">
                     <Button variant="ghost" className="text-md">
                         <Home className="mr-1 h-4 w-4" />
                         Home
@@ -71,73 +71,77 @@ export default function Header() {
                         <Bell className="mr-1 h-4 w-4" />
                         Notifications
                     </Button>
-                    <Button
-                        onClick={toggleDarkMode}
-                        variant="ghost"
-                        size="icon"
-                        className={`${darkMode && "text-yellow-400"}`}
-                    >
-                        {darkMode ? (
-                            <Sun className="h-[1.2rem] w-[1.2rem]" />
-                        ) : (
-                            <Moon className="h-[1.2rem] w-[1.2rem]" />
-                        )}
-                    </Button>
                 </nav>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild className="lg:hidden">
-                        <Button variant="ghost">
-                            <Menu size={24} />
+                <div>
+                    <div className="inline-flex mx-2">
+                        <Button
+                            onClick={toggleDarkMode}
+                            variant="ghost"
+                            size="icon"
+                            className={`${darkMode && "text-yellow-400"}`}
+                        >
+                            {darkMode ? (
+                                <Sun className="h-[1.2rem] w-[1.2rem]" />
+                            ) : (
+                                <Moon className="h-[1.2rem] w-[1.2rem]" />
+                            )}
                         </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                        align="end"
-                        className={`w-56 ${
-                            darkMode ? "bg-gray-800 text-white" : "bg-white"
-                        }`}
-                    >
-                        <DropdownMenuItem
-                            className={`hover:bg-blue-100 text-md ${
-                                darkMode ? "hover:bg-gray-700" : ""
+                    </div>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild className="lg:hidden">
+                            <Button variant="ghost">
+                                <Menu size={24} />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                            align="end"
+                            className={`w-56 ${
+                                darkMode ? "bg-gray-800 text-white" : "bg-white"
                             }`}
                         >
-                            <Home className="mr-2 h-4 w-4" />
-                            <span>Home</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                            className={`hover:bg-blue-100 text-md ${
-                                darkMode ? "hover:bg-gray-700" : ""
-                            }`}
-                        >
-                            <Notebook className="mr-2 h-4 w-4" />
-                            <span>Courses</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                            className={`hover:bg-blue-100 text-md ${
-                                darkMode ? "hover:bg-gray-700" : ""
-                            }`}
-                        >
-                            <UserRound className="mr-2 h-4 w-4" />
-                            <span>Teachers</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                            className={`hover:bg-blue-100 text-md ${
-                                darkMode ? "hover:bg-gray-700" : ""
-                            }`}
-                        >
-                            <GraduationCap className="mr-2 h-4 w-4" />
-                            <span>Resources</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                            className={`hover:bg-blue-100 text-md ${
-                                darkMode ? "hover:bg-gray-700" : ""
-                            }`}
-                        >
-                            <Bell className="mr-2 h-4 w-4" />
-                            <span>Notifications</span>
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                            <DropdownMenuItem
+                                className={`hover:bg-blue-100 text-md ${
+                                    darkMode ? "hover:bg-gray-700" : ""
+                                }`}
+                            >
+                                <Home className="mr-2 h-4 w-4" />
+                                <span>Home</span>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className={`hover:bg-blue-100 text-md ${
+                                    darkMode ? "hover:bg-gray-700" : ""
+                                }`}
+                            >
+                                <Notebook className="mr-2 h-4 w-4" />
+                                <span>Courses</span>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className={`hover:bg-blue-100 text-md ${
+                                    darkMode ? "hover:bg-gray-700" : ""
+                                }`}
+                            >
+                                <UserRound className="mr-2 h-4 w-4" />
+                                <span>Teachers</span>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className={`hover:bg-blue-100 text-md ${
+                                    darkMode ? "hover:bg-gray-700" : ""
+                                }`}
+                            >
+                                <GraduationCap className="mr-2 h-4 w-4" />
+                                <span>Resources</span>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                className={`hover:bg-blue-100 text-md ${
+                                    darkMode ? "hover:bg-gray-700" : ""
+                                }`}
+                            >
+                                <Bell className="mr-2 h-4 w-4" />
+                                <span>Notifications</span>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
             </div>
         </header>
     );

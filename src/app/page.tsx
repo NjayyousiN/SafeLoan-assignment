@@ -155,7 +155,7 @@ export default function CourseInfoCards() {
                             <BlurFade key={idx} delay={0.4 + idx * 0.05}>
                                 <Card
                                     key={course.id}
-                                    className="flex flex-col transition-all transform sm:hover:scale-105 ease-in-out duration-300 border dark:border-gray-700 dark:bg-gray-800 dark:text-white border-gray-200 bg-white shadow-lg hover:shadow-2xl"
+                                    className="flex flex-col transition-all transform sm:hover:scale-105 ease-in-out duration-300 dark:bg-gray-800 dark:text-white bg-blue-50"
                                 >
                                     <CardHeader className="pb-2">
                                         <CardTitle className="flex gap-2 items-center text-xl dark:text-blue-400 text-blue-600">
