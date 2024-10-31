@@ -6,7 +6,15 @@ import { Button } from "@/components/ui/button";
 import WordFadeIn from "@/components/ui/word-fade-in";
 import BlurFade from "@/components/ui/blur-fade";
 import Header from "@/components/header";
-import { Book, UserRound, BookDown, Clock, LogOut } from "lucide-react";
+import {
+    Book,
+    UserRound,
+    BookDown,
+    Clock,
+    LogOut,
+    Sun,
+    Moon,
+} from "lucide-react";
 import {
     Card,
     CardContent,
@@ -132,24 +140,29 @@ export default function CourseInfoCards() {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-white">
+        <div className="flex flex-col min-h-screen dark:bg-gray-900 bg-white">
             <Header />
-            <main className="flex-grow bg-gray-50">
+            <main className="flex-grow dark:bg-gray-800 bg-gray-50">
                 <div className="container mx-auto py-12 px-4">
-                    <WordFadeIn words="Book Classes with Our Expert Teachers" />
+                    <div className="flex justify-between items-center mb-8">
+                        <WordFadeIn
+                            words="Book Classes with Our Expert Teachers"
+                            className="font-bold text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-200 dark:to-blue-500 from-blue-500 to-blue-700"
+                        />
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {courses.map((course, idx) => (
                             <BlurFade key={idx} delay={0.4 + idx * 0.05}>
                                 <Card
                                     key={course.id}
-                                    className="flex flex-col transition-all transform sm:hover:scale-105 ease-in-out duration-300 border border-gray-200 shadow-lg hover:shadow-2xl bg-white"
+                                    className="flex flex-col transition-all transform sm:hover:scale-105 ease-in-out duration-300 border dark:border-gray-700 dark:bg-gray-800 dark:text-white border-gray-200 bg-white shadow-lg hover:shadow-2xl"
                                 >
                                     <CardHeader className="pb-2">
-                                        <CardTitle className="flex gap-2 items-center text-xl text-blue-600">
+                                        <CardTitle className="flex gap-2 items-center text-xl dark:text-blue-400 text-blue-600">
                                             <UserRound size={18} />
                                             {course.instructorName}
                                         </CardTitle>
-                                        <CardDescription className="flex gap-1 text-sm font-semibold items-center text-gray-600">
+                                        <CardDescription className="flex gap-1 text-sm font-semibold items-center dark:text-gray-400 text-gray-600">
                                             <Book size={22} />
                                             {course.subject}
                                         </CardDescription>
@@ -163,7 +176,7 @@ export default function CourseInfoCards() {
                                                 className="object-cover"
                                             />
                                         </div>
-                                        <div className="flex flex-col gap-2 items-start mt-auto text-gray-700 font-semibold">
+                                        <div className="flex flex-col gap-2 items-start mt-auto dark:text-gray-300 text-gray-700 font-semibold">
                                             <p>{course.courseName}</p>
                                             <div className="flex gap-1 items-center">
                                                 <Clock size={18} />
@@ -173,7 +186,7 @@ export default function CourseInfoCards() {
                                     </CardContent>
                                     <CardFooter className="flex flex-col gap-2">
                                         <div className="w-full flex items-center justify-between">
-                                            <span className="text-sm text-gray-600">
+                                            <span className="text-sm dark:text-gray-400 text-gray-600">
                                                 {course.enrolledStudents}/
                                                 {course.sectionSize} Enrolled
                                             </span>
@@ -184,7 +197,7 @@ export default function CourseInfoCards() {
                                                     course.sectionSize) *
                                                 100
                                             }
-                                            className="w-full h-2"
+                                            className="w-full h-2 dark:bg-gray-700 bg-gray-200"
                                         />
                                         {course.isRegistered ? (
                                             <Button
@@ -198,7 +211,7 @@ export default function CourseInfoCards() {
                                             </Button>
                                         ) : (
                                             <Button
-                                                className="w-full flex gap-2 items-center bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white transition-all duration-300"
+                                                className="w-full flex gap-2 items-center dark:bg-gradient-to-r dark:from-blue-600 dark:to-blue-800 dark:hover:from-blue-700 dark:hover:to-blue-900 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white transition-all duration-300"
                                                 disabled={
                                                     course.enrolledStudents >=
                                                     course.sectionSize
@@ -228,7 +241,7 @@ export default function CourseInfoCards() {
                     </div>
                 </div>
             </main>
-            <footer className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-6">
+            <footer className="dark:from-blue-900 dark:to-blue-950 bg-gradient-to-r from-blue-600 to-blue-800 text-white py-6">
                 <div className="container mx-auto text-center text-lg">
                     <p>&copy; 2024 EduConnect. All rights reserved.</p>
                 </div>
