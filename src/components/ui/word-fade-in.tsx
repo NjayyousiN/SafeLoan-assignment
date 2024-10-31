@@ -32,7 +32,7 @@ export default function WordFadeIn({
       initial="hidden"
       animate="visible"
       className={cn(
-        "font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-white",
+        "font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-700",
         className,
       )}
     >
