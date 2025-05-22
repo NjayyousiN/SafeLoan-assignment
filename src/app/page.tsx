@@ -54,7 +54,7 @@ const transformApiCourse = (apiCourse: ApiCourse): Course => ({
 });
 
 async function fetchCourses(): Promise<Course[]> {
-  const response = await fetch(`safeloan-db.onrender.com/courses`);
+  const response = await fetch(`https://safeloan-db.onrender.com/courses`);
   console.log("Response:", response);
   if (!response.ok) throw new Error("Failed to fetch courses");
   const data: ApiCourse[] = await response.json();
@@ -62,15 +62,18 @@ async function fetchCourses(): Promise<Course[]> {
 }
 
 async function updateCourse(courseId: number, registeredStudents: number) {
-  const response = await fetch(`safeloan-db.onrender.com/courses/${courseId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      no_of_registered_students: registeredStudents,
-    }),
-  });
+  const response = await fetch(
+    `https://safeloan-db.onrender.com/courses/${courseId}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        no_of_registered_students: registeredStudents,
+      }),
+    }
+  );
 
   if (!response.ok) throw new Error("Failed to update course");
   return response.json();
