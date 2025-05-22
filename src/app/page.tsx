@@ -6,15 +6,7 @@ import { Button } from "@/components/ui/button";
 import WordFadeIn from "@/components/ui/word-fade-in";
 import BlurFade from "@/components/ui/blur-fade";
 import Header from "@/components/header";
-import {
-  Book,
-  UserRound,
-  BookDown,
-  Clock,
-  LogOut,
-  Sun,
-  Moon,
-} from "lucide-react";
+import { Book, UserRound, BookDown, Clock, LogOut } from "lucide-react";
 import {
   Card,
   CardContent,
