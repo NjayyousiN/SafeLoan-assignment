@@ -44,9 +44,9 @@ const transformApiCourse = (apiCourse: ApiCourse): Course => ({
   courseName: apiCourse.subject,
   instructorName: apiCourse.instructor_name,
   subject: apiCourse.field,
-  imageSrc: `${
-    process.env.NEXT_PUBLIC_API_URL
-  }/courses/images/${apiCourse.course_pic.split("/").pop()}`,
+  imageSrc: `https://safeloan-db.onrender.com/courses/images/${apiCourse.course_pic
+    .split("/")
+    .pop()}`,
   timing: apiCourse.class_timing,
   sectionSize: 30,
   enrolledStudents: apiCourse.no_of_registered_students,
